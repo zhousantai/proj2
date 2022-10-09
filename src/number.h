@@ -13,98 +13,66 @@
 using namespace std;
 
 class number {
-//private:
-//    bool positive = true;
-//    int decimals;
-//    vector<int *> integers;
 
 public:
     number() {
         this->positive = 1;
         this->decimals = 0;
-        this->integers = vector<int>{0};
-
-
+        this->integers = vector<int>();
     }
 
     bool positive = true;
     int decimals;
-    vector<int>integers;
+    vector<int> integers;
 
     number(bool positive, int decimals, vector<int> integers);
 
     number static add(number num1, number num2);
 
-    number static minus(number num1, number num2);
+    static number function(const number &num1, char a);
 
-    number static mul(number num1, number num2);
+    number static minus(const number num1, number num2, int i);
 
-    number static div(number num1, number num2,vector<int>& answer);
+    number static mul(const number &num1, const number &num2);
 
-    number static mod(number num1, number num2);
+    number static div(const number &num1, number num2);
 
-    number static sin(number num1);
+    number static sin(const number &num1);
 
-    number static cos(number num1);
+    number static cos(const number &num1);
 
-    number static tan(number num1);
+    number static tan(const number &num1);
 
-    number static sqrt(number num1);
+    number static sqrt(const number &num1);
 
+    static void clear(vector<number> &numbers, vector<char> &operators, char a);
 
-    bool static equal(number num1, number num2);
+    bool static equal(const number &num1, number num2);
 
-    number static exp(number num1);
+    number static exp(const number &num1);
 
-    number static ln(number num1);
+    number static ln(const number &num1);
 
-    bool static larger(number num1, number num2);
+    bool static larger(const number &num1, number num2);
 
-    bool static smaller(number num1, number num2);
+    bool static smaller(const number &num1, const number &num2);
 
-    bool static abs_com(number num1, number num2);
+    bool static abs_com(const number &num1, const number &num2);
 
     bool static convertNumToInts(number num, int cal[]);
 
     bool static convertIntsToNum(number &num, int ans[]);
 
-    bool static convertStringToNum(string str,number& number);
+    bool static convertStringToNum(string str, number &number);
 
     static number calculate(string input);
+
     static number calculate1(string input);
+
     static void calculate2(string input);
 
-    static number vectorCalculate(vector<number>,vector<char>);
+    static bool vectorCalculate(vector<number> &, vector<char> &, int i);
 
-//    bool getPositive() {
-//        return positive;
-//    }
-//
-//    bool isPositive() const {
-//        return positive;
-//    }
-//
-//    void setPositive(bool positive) {
-//        number::positive = positive;
-//    }
-//
-//    int getDecimals() const {
-//        return decimals;
-//    }
-//
-//    void setDecimals(int decimals) {
-//        number::decimals = decimals;
-//    }
-//
-//    const vector<int *> &getIntegers() const {
-//        return integers;
-//    }
-//
-//    void setIntegers(const vector<int *> &integers) {
-//        number::integers = integers;
-//    }
-//
-//    virtual ~number() {
-//        delete integers[integers.size()];
-//    }
+    static number tempMinus(const number &num1, const number &num2);
+
 };

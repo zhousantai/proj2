@@ -1,12 +1,8 @@
-//
-// Created by winnie泰 on 2022/10/6.
-//
+
 #include "iostream"
-#include "vector"
-#include "stdio.h"
 #include "algorithm"
 #include "number.cpp"
-#include "map"
+#include<string>
 //#include "omp.h"
 using namespace std;
 //#pragma omp parallel for
@@ -14,36 +10,65 @@ using namespace std;
 
 
 int main() {
-    string input;
-    scanf("%s", &input);
-    number ans = number::calculate(input);
-    if (ans.decimals <= 0) {
-        int temp = abs(ans.decimals);
-        for (int i = 0; i < temp; ++i) {
-            ans.integers.push_back(0);
+    cout << R"(please enter your equation, type "-h" for help and restriction and "quit" to quit )" << endl;
+    while (true) {
+        string input;
+        getline(cin, input);
+        bool help = false;
+        if (input == "-h") {
+            cout << "The calculator can calculate operators as follows: + - * / sin() cos() tan() sqrt() exp() ln()\n"
+                    "we allow use functions to calculate number whose absolute value is smaller than e13.\n"
+                    "you are allowed to give value to variable using name as x,y,z.\n"
+                    "Remark: pay attention to not divide zero or tan(0),which will be detected by the program." << endl;
+            help = true;
+        } else if (input == "quit") {
+            cout << "Program over" << endl;
+            break;
         }
-        for (int i = 0; i < ans.integers.size(); ++i) {
-            cout << ans.integers[i];
-        }
-    } else {
-        if (ans.decimals <= 6) {
-            int index = ans.integers.size() - ans.decimals;
-            for (int i = 0; i < index; ++i) {
-                cout << ans.integers[i];
+        if (help)continue;
+        bool flag = false;
+        for (int i = 0; i < input.size(); ++i) {
+            if (input[i] == '=') {
+                flag = true;//赋值语句
+                number::calculate(input);
+                break;
             }
-            cout << ".";
-            for (int i = index; i < ans.integers.size(); ++i) {
+        }
+        number ans;
+        if (!flag) {
+            ans = number::calculate(input);
+        }
+        if (!ans.positive)cout << '-';
+        if (ans.decimals <= 0) {
+            int temp = abs(ans.decimals);
+            for (int i = 0; i < temp; ++i) {
+                ans.integers.push_back(0);
+            }
+            for (int i = 0; i < ans.integers.size(); ++i) {
                 cout << ans.integers[i];
             }
         } else {
-            int index = ans.integers.size() - 6;
-            for (int i = 0; i < index; ++i) {
-                cout << ans.integers[i];
-            }
-            cout << ".";
-            for (int i = index; i < index + 6; ++i) {
-                cout << ans.integers[i];
+            if (ans.decimals <= 15) {
+                int index = ans.integers.size() - ans.decimals;
+                for (int i = 0; i < index; ++i) {
+                    cout << ans.integers[i];
+                }
+                if (index <= 0)cout << "0";
+                cout << ".";
+                for (int i = index; i < ans.integers.size(); ++i) {
+                    cout << ans.integers[i];
+                }
+            } else {
+                int index = ans.integers.size() - 15;
+                for (int i = 0; i < index; ++i) {
+                    cout << ans.integers[i];
+                }
+                cout << ".";
+                for (int i = index; i < index + 15; ++i) {
+                    cout << ans.integers[i];
+                }
             }
         }
+        cout<<endl;
     }
 }
