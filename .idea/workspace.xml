@@ -21,15 +21,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b32f399d-765a-4c10-b076-3bcac04d63ac" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/proj2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/number.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/number.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/number.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/number.h" afterDir="false" />
-    </list>
+    <list default="true" id="b32f399d-765a-4c10-b076-3bcac04d63ac" name="Changes" comment="Initial commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +33,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-覆盖率" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -100,8 +93,16 @@
       <workItem from="1665736960470" duration="254000" />
       <workItem from="1665737312184" duration="166000" />
       <workItem from="1665746766763" duration="6794000" />
-      <workItem from="1665800126861" duration="13521000" />
+      <workItem from="1665800126861" duration="13836000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1665847935170</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665847935170</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +118,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changes" />
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -194,10 +200,10 @@
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/number.cpp" line="320">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/number.cpp" line="299">
         <watch expression="ans[i+length-1]" language="ObjectiveC" />
       </inline-watch>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/src/number.cpp" line="320">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/src/number.cpp" line="299">
         <watch expression="i+length-1" language="ObjectiveC" />
       </inline-watch>
     </watches-manager>
